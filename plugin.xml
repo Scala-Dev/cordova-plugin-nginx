@@ -24,6 +24,13 @@
                 <param name="android-package" value="com.scala.cordova.plugin.expnginx.ExpNginx"/>
             </feature>
         </config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        </config-file>
+
+        <framework src="src/android/build-extras.gradle" custom="true" type="gradleReference" />
 
         <source-file src="src/android/ExpNginx.java" target-dir="src/com/scala/cordova/plugin/expnginx" />
         <source-file src="src/android/Nginx.java" target-dir="src/com/scala/cordova/plugin/expnginx" />

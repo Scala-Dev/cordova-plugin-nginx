@@ -1,0 +1,13 @@
+android {
+	defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 19
+    }
+	externalNativeBuild {
+        ndkBuild {
+            path 'jni/Android.mk'
+
+        }
+    }
+
+}
