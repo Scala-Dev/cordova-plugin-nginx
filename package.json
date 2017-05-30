@@ -1,0 +1,23 @@
+{
+  "name": "ordova-plugin-nginx",
+  "version": "1.0.0",
+  "description": "Cordova Nginx Plugin",
+  "cordova": {
+    "id": "com.scala.cordova.plugin.nginx",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ScalaInc/cordova-plugin-nginx.git"
+  },
+  "keywords": [
+    "cordova",
+    "nginx",
+    "cordova-android"
+  ],
+  "author": "",
+  "license": "Apache 2.0",
+  "homepage": "https://github.com/ScalaInc/cordova-plugin-nginx"
+}
