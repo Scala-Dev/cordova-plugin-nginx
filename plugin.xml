@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.scala.cordova.plugin.nginx"
+    version="1.0.0">
+
+    <name>Exp Ngnix</name>
+    <repo>https://github.com/ScalaInc/cordova-plugin-nginx.git</repo>
+    <keywords>cordova,nginx,android,ios</keywords>
+    <license>MIT</license>
+    <author>Scala Inc</author>
+    <description>
+      &lt;p&gt;This is a version of Cordova Nginx for Android.&lt;/p&gt;
+    </description>
+
+    <js-module src="www/ExpNginx.js" name="ExpNginx">
+        <clobbers target="expngix" /><!-- will be available under window.cache -->
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="ExpNginx" >
+                <param name="android-package" value="com.scala.cordova.plugin.expnginx.ExpNginx"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/ExpNginx.java" target-dir="src/com/scala/cordova/plugin/expnginx" />
+        <source-file src="src/android/Nginx.java" target-dir="src/com/scala/cordova/plugin/expnginx" />
+        <source-file src="jni" target-dir="jni"/>
+    </platform>
+    
+    
+</plugin>
