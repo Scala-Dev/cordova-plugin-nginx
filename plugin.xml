@@ -34,7 +34,7 @@
 
         <source-file src="src/android/ExpNginx.java" target-dir="src/com/scala/cordova/plugin/expnginx" />
         <source-file src="src/android/Nginx.java" target-dir="src/com/scala/cordova/plugin/expnginx" />
-        <source-file src="jni" target-dir="jni"/>
+        <source-file src="jni" target-dir="."/>
     </platform>
     
     

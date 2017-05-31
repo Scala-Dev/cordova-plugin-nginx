@@ -18,11 +18,6 @@ package com.scala.cordova.plugin.expnginx;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
-import android.app.AlarmManager;
-import android.app.PendingIntent;
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.util.Log;
 
 import org.apache.cordova.CallbackContext;
@@ -30,11 +25,6 @@ import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
-import com.scala.cordova.plugin.Nginx;
-
-import java.io.File;
-import java.io.IOException;
 
 @TargetApi(19)
 public class ExpNginx extends CordovaPlugin {
@@ -54,7 +44,7 @@ public class ExpNginx extends CordovaPlugin {
 	public boolean execute (String action, final JSONArray args, CallbackContext callbackContext) throws JSONException {
 
 		final Activity activity = cordova.getActivity();
-		static ExpNginx nginx ;
+		final Nginx nginx = Nginx.create();
 		if( action.equals("start") ) {
 			Log.v(LOG_TAG, "Cordova Android ExpNginx.start() called.");
 			this.callbackContext = callbackContext;
@@ -62,7 +52,6 @@ public class ExpNginx extends CordovaPlugin {
 			activity.runOnUiThread( new Runnable() {
 				public void run() {
 					try {
-						nginx = Nginx.create();
                 		nginx.start();
 						// send success result to cordova
 						PluginResult result = new PluginResult(PluginResult.Status.OK);
@@ -93,7 +82,7 @@ public class ExpNginx extends CordovaPlugin {
 				public void run() {
 					try {
 						// stop nginx server
-						int delay = (int) args.get(0);
+						Integer delay = (Integer) args.get(0);
 						nginx.stop(delay);
 
 						// send success result to cordova
