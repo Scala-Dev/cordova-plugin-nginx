@@ -7,7 +7,7 @@ Application Build Manual
 You may use cordova CLI as follows:
 
 <pre>
-➜ cordova plugin add https://github.com/moderna/cordova-plugin-nginx.git
+➜ cordova plugin add https://github.com/ScalaInc/cordova-plugin-nginx
 </pre>
 
 
