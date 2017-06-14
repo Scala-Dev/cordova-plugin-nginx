@@ -1,5 +1,5 @@
 {
-  "name": "ordova-plugin-nginx",
+  "name": "cordova-plugin-nginx",
   "version": "1.0.0",
   "description": "Cordova Nginx Plugin",
   "cordova": {
